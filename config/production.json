@@ -1,0 +1,4 @@
+{
+  "host": "tcp-udp-app.feathersjs.com",
+  "port": "PORT"
+}
