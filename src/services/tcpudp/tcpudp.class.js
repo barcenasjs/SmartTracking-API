@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const dgram = require("dgram");
+const net = require("net");
 exports.Tcpudp = class Tcpudp {
   constructor(options) {
     this.options = options || {};
@@ -22,14 +23,8 @@ exports.Tcpudp = class Tcpudp {
       return Promise.all(data.map((current) => this.create(current, params)));
     }
     console.log("PROTOCOL: TPC  " + JSON.stringify(data));
-    try {
-      const socket = dgram.createSocket("udp4");
-      socket.send(Buffer.from(JSON.stringify(data)), 41234, "localhost");
-    } catch (err) {
-      console.log("No UDP server listener found");
-    }
 
-    return "Información recibida satisfactoriamente. PROTOCOL : TCP";
+    return data;
   }
 
   async update(id, data, params) {
