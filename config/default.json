@@ -5,5 +5,6 @@
   "paginate": {
     "default": 10,
     "max": 50
-  }
+  },
+  "mysql": "mysql://root:thJ4NgsEW7VUgwKrx!Y6SSh*@bahoque.com:3307/santiinfranqueable"
 }

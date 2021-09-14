@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
-const dgram = require("dgram");
-const net = require("net");
+const dgram = require('dgram');
+const net = require('net');
+
 exports.Tcpudp = class Tcpudp {
-  constructor(options) {
+  constructor(options, app) {
     this.options = options || {};
+    this.app = app;
   }
 
   async find(params) {
@@ -22,9 +24,8 @@ exports.Tcpudp = class Tcpudp {
     if (Array.isArray(data)) {
       return Promise.all(data.map((current) => this.create(current, params)));
     }
-    console.log("PROTOCOL: TPC  " + JSON.stringify(data));
 
-    return data;
+    return this.app.service('write').create({ position: JSON.stringify(data) });
   }
 
   async update(id, data, params) {
@@ -36,6 +37,6 @@ exports.Tcpudp = class Tcpudp {
   }
 
   async remove(id, params) {
-    return { id };
+    return {id};
   }
 };
