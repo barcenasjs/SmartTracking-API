@@ -29,6 +29,8 @@ exports.Tcpudp = class Tcpudp {
   }
 
   async update(id, data, params) {
+    const a = this.app.service('write').getModel();
+    a.update()
     return data;
   }
 
