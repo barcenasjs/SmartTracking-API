@@ -4,7 +4,7 @@
   "public": "../public/",
   "paginate": {
     "default": 10,
-    "max": 1000
+    "max": 10000
   },
   "mysql": "mysql://root:thJ4NgsEW7VUgwKrx!Y6SSh*@bahoque.com:3307/santiinfranqueable"
 }
