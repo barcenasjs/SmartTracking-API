@@ -4,16 +4,16 @@ const createModel = require('../../models/write.model');
 const hooks = require('./write.hooks');
 
 module.exports = function (app) {
-  const options = {
-    Model: createModel(app),
-    paginate: app.get('paginate')
-  };
+	const options = {
+		Model: createModel(app),
+		paginate: app.get('paginate'),
+	};
 
-  // Initialize our service with any options it requires
-  app.use('/write', new Write(options, app));
+	// Initialize our service with any options it requires
+	app.use('/write', new Write(options, app));
 
-  // Get our initialized service so that we can register hooks
-  const service = app.service('write');
+	// Get our initialized service so that we can register hooks
+	const service = app.service('write');
 
-  service.hooks(hooks);
+	service.hooks(hooks);
 };
