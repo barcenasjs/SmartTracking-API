@@ -16,7 +16,10 @@ async function defineAbilitiesFor(user) {
 	const { rules, can } = new AbilityBuilder();
 	if (user) {
 		can('manage', 'all');
-	}
+
+	}else {
+	  can('create', ['users'])
+  }
 
 	if (process.env.NODE_ENV !== 'production') {
 		can('create', ['users']);

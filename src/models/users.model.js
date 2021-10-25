@@ -29,6 +29,7 @@ module.exports = function (app) {
 			number_plate: {
 				type: DataTypes.STRING,
 				allowNull: true,
+        unique: true
 			},
 			verification_code: {
 				type: DataTypes.STRING(4),
