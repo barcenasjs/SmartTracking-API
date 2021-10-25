@@ -1,11 +1,13 @@
-
+const {alterItems} = require('feathers-hooks-common')
 
 module.exports = {
   before: {
     all: [],
     find: [],
     get: [],
-    create: [],
+    create: [alterItems((record,context)=>{
+      record.user_id = context.params.user.id
+    })],
     update: [],
     patch: [],
     remove: []
