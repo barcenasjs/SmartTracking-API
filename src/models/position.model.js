@@ -30,7 +30,7 @@ module.exports = function (app) {
 
   // eslint-disable-next-line no-unused-vars
   position.associate = function (models) {
-position.hasMany(usersModel(app), {foreignKey: 'user_id', onDelete: 'CASCADE'})
+  position.belongsTo(usersModel(app), {foreignKey: 'user_id', onDelete: 'CASCADE'})
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };

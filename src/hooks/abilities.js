@@ -18,13 +18,9 @@ async function defineAbilitiesFor(user) {
 		can('manage', 'all');
 
 	}else {
-	  can('create', ['users'])
+	  can(['create'], 'users')
   }
-
-	if (process.env.NODE_ENV !== 'production') {
-		can('create', ['users']);
-	}
-
+	console.log(user)
 	return new Ability(rules, { subjectName });
 }
 
