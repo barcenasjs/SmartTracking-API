@@ -18,7 +18,7 @@ async function defineAbilitiesFor(user) {
 		can('manage', 'all');
 
 	}else {
-	  can(['create'], 'users')
+	  can(['create', 'find'], ['users', 'position'])
   }
 	console.log(user)
 	return new Ability(rules, { subjectName });

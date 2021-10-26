@@ -18,6 +18,10 @@ module.exports = function (app) {
     user_id:{
       type:DataTypes.BIGINT,
       notNull: true
+    },
+    date:{
+      type:DataTypes.STRING,
+      notNull: true
     }
 
   }, {
